@@ -11,4 +11,9 @@
       <button id="button" type="submit">Add User</button>
     </form>
   </div>
+  {% for user in users %}
+  <div>
+    <p>{{ user.full_name }}, £{{ user.amount }}</p>
+  </div>
+  {% endfor %}
 {% endblock %}

@@ -13,19 +13,19 @@ def users():
   return render_template("users/index.html", users=users)
 
 # #New
-# @users_blueprint.route('/users/new', methods=["GET"])
-# def new_user():
-#   users = user_repository.select_all()
-#   return render_template("users/index.html")
+@users_blueprint.route('/users/new', methods=["GET"])
+def new_user():
+  users = user_repository.select_all()
+  return render_template("users/index.html", users=users)
 
 #Create
 @users_blueprint.route('/users', methods=['POST'])
 def create_user():
   name = request.form["username"]
   amount = request.form["amount"]
-  user = User(name, amount)
-  user_repository.save(user)
-  return redirect('/')
+  new_user = User(name, amount)
+  user_repository.save(new_user)
+  return redirect('/users')
 
 # #show
 # @users_blueprint.route('/users/<id>', methods=['GET'])
