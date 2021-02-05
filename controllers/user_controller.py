@@ -27,8 +27,8 @@ def create_user():
   user_repository.save(new_user)
   return redirect('/users')
 
-# #show
-# @users_blueprint.route('/users/<id>', methods=['GET'])
+#show
+# @users_blueprint.route('/<id>', methods=['GET'])
 # def show_user(id):
 #   user = user_repository.select(id)
 #   return render_template('show.html', user=user)
