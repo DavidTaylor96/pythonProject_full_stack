@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.user import User
-
+from models.category import Category
+from models.company import Company
 
 def save(user):
   sql = "INSERT INTO users(full_name, amount) VALUES (%s, %s) RETURNING id"
@@ -33,3 +34,8 @@ def select_id(id):
 def delete_all():
   sql = "DELETE FROM users"
   run_sql(sql)
+
+def delete(id):
+  sql = "DELETE FROM users WHERE id = %s"
+  values = [id]
+  run_sql(sql, values)

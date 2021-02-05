@@ -1,6 +1,5 @@
-class Category():
-
-  def ___init__(self, name, id=None):
+class Category:
+  def __init__(self, name, id=None):
     self.name = name
     self.id = id
 
