@@ -2,11 +2,11 @@ from flask import Flask, render_template
 
 # from controllers.category_controller import category_controller
 # from controllers.company_controller import company_controller
-#from controllers.user_controller import users_blueprint
+from controllers.user_controller import users_blueprint
 
 app = Flask(__name__)
 
-#app.register_blueprint(users_blueprint)
+app.register_blueprint(users_blueprint)
 # app.register_blueprint(companys_blueprint)
 # app.register_blueprint(categorys_blueprint)
 

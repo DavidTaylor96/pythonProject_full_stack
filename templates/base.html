@@ -4,24 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spending tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
   <header>
    <section id="content">
      {% block content %}
-      
+
      {% endblock %}
    </section>
    <nav>
     <ul>
       <li>
-        <a href="/users">User</a>
+        <a href="/">Home</a>
       </li>
       <li>
-        <a href="/categorys">Categorys</a>
-      </li>
-      <li>
-        <a href="/companys">Companys</a>
+        <a href="/users">Add User</a>
       </li>
     </ul>
   </nav>
