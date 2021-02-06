@@ -34,5 +34,10 @@ def edit_user(id):
   return render_template('users/edit.html', user=user)
 
 # Update
-@user_repository.route("/users/<id>", methods=['POST'])
-def update_user
+@users_blueprint.route("/users/<id>", methods=['POST'])
+def update_user(id):
+  name = request.form["username"]
+  amount = request.form["amount"]
+  updated_user = User(name, amount, id)
+  user_repository.update(updated_user)
+  return redirect("/users")

@@ -40,5 +40,5 @@ def delete(id):
 
 def update(user):
   sql = "UPDATE users SET (full_name, amount) = (%s, %s) WHERE id = %s"
-  values = [user.full_name, user.amount]
+  values = [user.full_name, user.amount, user.id]
   run_sql(sql, values)
