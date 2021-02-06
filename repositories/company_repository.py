@@ -15,18 +15,18 @@ def save(company):
   company.id = results[0]['id']
   return company
 
-  def select_all():
-    companys = []
+def select_all():
+  companys = []
 
-    sql = "SELECT * FROM companys"
-    results = run_sql(sql)
-    for row in results:
-      category = category_repository.select(row['category_id'])
-      company = Category(row['name'], category, row['amount'], row['id'])
-      companys.append(company)
-    return companys
+  sql = "SELECT * FROM companys"
+  results = run_sql(sql)
+  for row in results:
+    category = category_repository.select(row['category_id'])
+    company = Category(row['name'], category, row['amount'], row['id'])
+    companys.append(company)
+  return companys
 
-def select_id(id):
+def select(id):
   company = None
   sql = "SELECT * FROM companys WHERE id = %s"
   values = [id]
