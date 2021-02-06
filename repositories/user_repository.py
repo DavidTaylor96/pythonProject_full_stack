@@ -21,15 +21,13 @@ def select_all():
     users.append(user)
   return users
 
-def select_id(id):
-  user = None
+def select(id):
   sql = "SELECT * FROM users WHERE id = %s"
   values = [id]
   result = run_sql(sql, values)[0]
-
-  if result is not None:
-    user= User(result['name'], result['amount'], result['id'])
+  user = User(result['full_name'], result['amount'], result['id'])
   return user
+
 
 def delete_all():
   sql = "DELETE FROM users"
@@ -38,4 +36,9 @@ def delete_all():
 def delete(id):
   sql = "DELETE FROM users WHERE id = %s"
   values = [id]
+  run_sql(sql, values)
+
+def update(user):
+  sql = "UPDATE users SET (full_name, amount) = (%s, %s) WHERE id = %s"
+  values = [user.full_name, user.amount]
   run_sql(sql, values)

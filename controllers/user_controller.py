@@ -28,7 +28,11 @@ def create_user():
   return redirect('/users')
 
 # Edit
-@users_blueprint.route("/users/<id>/edit", methods=["POST"])
+@users_blueprint.route("/users/<id>/edit")
 def edit_user(id):
-  users = user_repository.select(id)
-  return render_template('users/edit.html', users=users)
+  user = user_repository.select(id)
+  return render_template('users/edit.html', user=user)
+
+# Update
+@user_repository.route("/users/<id>", methods=['POST'])
+def update_user
