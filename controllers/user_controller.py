@@ -41,3 +41,9 @@ def update_user(id):
   updated_user = User(name, amount, id)
   user_repository.update(updated_user)
   return redirect("/users")
+
+# Delete
+@users_blueprint.route("/users/<id>/delete", methods=["POST"])
+def delete_user(id):
+  user_repository.delete(id)
+  return redirect("/users")

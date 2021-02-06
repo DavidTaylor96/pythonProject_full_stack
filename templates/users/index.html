@@ -6,11 +6,10 @@
 
    <section>
      <p>{{ user.full_name }} £{{ user.amount }}</p>
-     <a href="/users/{{ user.id }}/edit">Edit</a>
-     <form action="/users/{{ user.id }}/edit/delete" method="POST">
-      <input type="submit" value="Delete">
+     <a href="/users/{{ user.id }}/edit"><button type="submit" id=button1>Edit User</button></a>
+     <form action="/users/{{ user.id }}/delete" method="POST">
+      <button id="button1" type="submit">Delete User</button>
     </form>
-    <a href="/users/{{ user.id }}">Details</a>
    </section>
      
    {% endfor %}
