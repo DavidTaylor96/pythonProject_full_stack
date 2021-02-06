@@ -22,7 +22,7 @@ def select_all():
   results = run_sql(sql)
   for row in results:
     category = category_repository.select(row['category_id'])
-    company = Category(row['name'], category, row['amount'], row['id'])
+    company = Company(row['name'], category, row['amount'], row['id'])
     companys.append(company)
   return companys
 
