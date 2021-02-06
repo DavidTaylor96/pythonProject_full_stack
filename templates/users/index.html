@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <form action="/users" method="POST">
-        <label for="username">Name</label>
-        <input type="text" id="user" name="username" placeholder="Name" required autofocus class="input">
-    
-        <label for="amount">Amount</label>
-        <input type="number" id="amount" name="amount" placeholder="amount" class="input">
-    
-      <button id="button" type="submit">Add User</button>
+   <h2>Users</h2>
+
+   {% for user in users %}
+
+   <section>
+     <p>{{ user.full_name }} £{{ user.amount }}</p>
+     <a href="/users/{{ user.id }}/edit">Edit</a>
+     <form action="/users/{{ user.id }}/edit/delete" method="POST">
+      <input type="submit" value="Delete">
     </form>
-  </div>
-  {% for user in users %}
-  <div>
-    <p>{{ user.full_name }}, £{{ user.amount }}</p>
-  </div>
-  {% endfor %}
+    <a href="/users/{{ user.id }}">Details</a>
+   </section>
+     
+   {% endfor %}
+   <nav>
+    <ul>
+      <li>
+        <a href="/users/new">Add User</a>
+      </li>
+    </ul>
+  </nav>
 {% endblock %}
