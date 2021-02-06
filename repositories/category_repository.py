@@ -4,6 +4,7 @@ from models.category import Category
 from models.company import Company
 
 import repositories.company_repository as company_repository
+import repositories.category_repository as category_repository
 
 def save(category):
   sql = "INSERT INTO categorys ( name ) VALUES ( %s ) RETURNING id"
@@ -50,6 +51,6 @@ def companys(category):
   results = run_sql(sql, values)
 
   for row in results:
-    company = Company(row['name'], row['amount'], row['category_id'])
+    company = Company(row['name'], row['amount'], row['category_id'], row['id'])
     companys.append(company)
   return companys

@@ -3,5 +3,4 @@ class Category:
     self.name = name
     self.id = id
 
-def category_name(self):
-  return f"{self.name}"
+
