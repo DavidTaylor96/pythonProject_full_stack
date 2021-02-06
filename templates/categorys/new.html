@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <form action="/categorys" method="POST">
+        <label for="category">Category Name</label>
+        <input type="text" id="category" name="categorys" placeholder="Name" required autofocus class="input">
+    
+      <button id="button" type="submit">Add Category</button>
+    </form>
+  </div>
+  {% for category in categorys %}
+  <div>
+    <p>{{ category.name }}</p>
+  </div>
+  {% endfor %}
+{% endblock %}

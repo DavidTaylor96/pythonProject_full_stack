@@ -16,12 +16,18 @@ def users():
 @categorys_blueprint.route('/categorys/new', methods=["GET"])
 def new_user():
   categorys = category_repository.select_all()
-  return render_template("categorys/index.html", categorys=categorys)
+  return render_template("categorys/new.html", categorys=categorys)
 
 #Create
 @categorys_blueprint.route('/categorys', methods=['POST'])
 def create_user():
-  name = request.form["name"]
-  new_category = User(name)
+  name = request.form["categorys"]
+  new_category = Category(name)
   category_repository.save(new_category)
   return redirect('/categorys')
+
+# Delete
+@categorys_blueprint.route("/categorys/<id>/delete", methods=["POST"])
+def delete_user(id):
+  category_repository.delete(id)
+  return redirect("/categorys")
