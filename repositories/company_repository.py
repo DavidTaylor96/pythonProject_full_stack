@@ -34,7 +34,7 @@ def select(id):
   result = run_sql(sql, values)[0]
 
   if result is not None:
-    category = category_repository.select(result['category_id'])
+    category = category_repository.select(id)
     company = Company(result['name'], result['amount'], category, result['id'])
   return company
 
@@ -52,14 +52,3 @@ def update(company):
   values = [company.name, company.amount, company.category.id, company.id]
   print(values)
   run_sql(sql, values)
-
-def companys(category):
-  companys = []
-  sql = "SELECT * FROM companys WHERE category_id = %s"
-  values = [category.id]
-  results = run_sql(sql, values)
-
-  for row in results:
-    company = Company(row['name'], row['amount'], row['category_id'])
-    companys.append(company)
-  return companys

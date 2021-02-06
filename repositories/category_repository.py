@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 
 from models.category import Category
+from models.company import Company
 
 import repositories.company_repository as company_repository
 
@@ -41,3 +42,14 @@ def delete(id):
   sql = "DELETE FROM categorys WHERE id = %s"
   values = [id]
   run_sql(sql, values)
+
+def companys(category):
+  companys = []
+  sql = "SELECT * FROM companys WHERE category_id = %s"
+  values = [category.id]
+  results = run_sql(sql, values)
+
+  for row in results:
+    company = Company(row['name'], row['amount'], row['category_id'])
+    companys.append(company)
+  return companys

@@ -10,9 +10,7 @@
         
         <label for="category">Category</label>
         <select id="category" name="category_id">
-          {% for category in all_categorys  %}
-            <option value="{{ category.id }}">{{ category.name() }}</option>
-          {% endfor %}
+            <option value="{{ category.id }}">{{ category.category_name() }}</option>
         </select>
     
       <button id="button" type="submit">Add Company</button>

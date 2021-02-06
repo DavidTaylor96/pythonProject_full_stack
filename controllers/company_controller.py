@@ -20,7 +20,7 @@ def company():
 @companys_blueprint.route('/companys/new', methods=['GET'])
 def new_company():
   companys = company_repository.select_all()
-  return render_template('companys/new.html', all_companys=companys)
+  return render_template('companys/new.html', categorys=categorys, companys=companys)
 
 # Create
 @companys_blueprint.route('/companys', methods=['POST'])
