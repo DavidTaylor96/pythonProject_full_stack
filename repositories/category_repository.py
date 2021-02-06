@@ -21,7 +21,7 @@ def select_all():
         categorys.append(category)
     return categorys
 
-def select_id(id):
+def select(id):
   category = None
   sql = "SELECT * FROM categorys WHERE id = %s"
   values = [id]
@@ -40,10 +40,4 @@ def delete_all():
 def delete(id):
   sql = "DELETE FROM categorys WHERE id = %s"
   values = [id]
-  run_sql(sql, values)
-
-
-def update(company):
-  sql = "UPDATE companys SET (name, amount, category.id) = (%s, %s, %s) WHERE id = %s"
-  values = [company.name, company.amount, company.category.id, company.id]
   run_sql(sql, values)

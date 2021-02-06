@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <form action="/companys" method="POST">
+        <label for="name">Company Name</label>
+        <input type="text" id="user" name="name" placeholder="Name" required autofocus class="input">
+    
+        <label for="amount">Amount Spend</label>
+        <input type="number" id="amount" name="amount" placeholder="amount" class="input">
+    
+      <button id="button" type="submit">Add Company</button>
+    </form>
+  </div>
+  {% for company in companys %}
+  <div>
+    <p>{{ company.full_name }}, £{{ company.amount }}</p>
+  </div>
+  {% endfor %}
+{% endblock %}

@@ -44,3 +44,8 @@ def delete(id):
   sql = "DELETE FROM companys WHERE id = %s"
   values = [id]
   run_sql(sql, values)
+
+def update(company):
+  sql = "UPDATE companys SET (name, amount, category.id) = (%s, %s, %s) WHERE id = %s"
+  values = [company.name, company.amount, company.category.id, company.id]
+  run_sql(sql, values)
