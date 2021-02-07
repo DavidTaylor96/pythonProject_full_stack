@@ -3,15 +3,28 @@
    <h1>Taylor's Savings</h1>
    
    <p>Tailored to your savings</p>
-   
+
     {% for user in users %}
     <section>
-      <h1>Add user in here</h1>
       <p>{{ user.full_name }} £{{ user.amount }}</p>
+
       <a href="/users/{{ user.id }}/edit"><button type="submit" id=button1>Edit User</button></a>
+
       <form action="/users/{{ user.id }}/delete" method="POST">
        <button id="button1" type="submit">Delete User</button>
      </form>
     </section>
-    {% endfor %}
- {% endblock %}
+  {% endfor %}
+
+  {% for company in companys %}
+  <section>
+    <p>{{ company.name }} £{{ company.amount }} {{ company.category.name }}</p>
+
+    <a href="/companys/{{ company.id }}/edit"><button type="submit" id=button1>Edit Company</button></a>
+    <form action="/companys/{{ company.id }}/delete" method="POST">
+      <button id="button1" type="submit">Delete companys</button>
+    </form>
+  </section>
+  {% endfor %}
+
+{% endblock %}

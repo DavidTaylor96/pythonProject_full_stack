@@ -10,7 +10,7 @@
         
         <label for="category">Category</label>
         <select id="category" name="category_id">
-          {% for category in all_categorys %}
+          {% for category in categorys %}
             <option value="{{ category.id }}">{{ category.name }}</option>
           {% endfor %}
         </select>

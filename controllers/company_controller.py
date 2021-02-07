@@ -11,16 +11,16 @@ companys_blueprint = Blueprint("companys", __name__)
 
 
 #INDEX
-@companys_blueprint.route('/companys')
+@companys_blueprint.route('/')
 def company():
   companys = company_repository.select_all()
-  return render_template('companys/index.html', companys=companys)
+  return render_template('index.html', companys=companys)
 
 # New
 @companys_blueprint.route('/companys/new', methods=['GET'])
 def new_company():
   categorys = category_repository.select_all()
-  return render_template('companys/new.html', all_categorys=categorys)
+  return render_template('companys/new.html', categorys=categorys)
 
 # Create
 @companys_blueprint.route('/companys', methods=['POST'])
@@ -30,7 +30,7 @@ def create_company():
   category = request.form['category_id']
   create_company = Company(name, amount, category)
   company_repository.save(create_company)
-  return redirect('/companys')
+  return redirect('/')
 
 
 # Edit
@@ -45,13 +45,13 @@ def update_company(id):
   name = request.form["name"]
   amount = request.form["amount"]
   category = category_repository.select(request.form['category_id'])
-  company = Company(name, amount, category, id)
-  print(company.category.category_name())
-  company_repository.update(company)
-  return redirect("/companys") 
+  update_company = Company(name, amount, category, id)
+  print(company.category.name)
+  company_repository.update(update_company)
+  return redirect("/") 
 
 # Delete
 @companys_blueprint.route("/companys/<id>/delete", methods=["POST"])
 def delete_company(id):
   company_repository.delete(id)
-  return redirect("/companys")
+  return redirect("/")
