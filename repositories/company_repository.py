@@ -12,8 +12,7 @@ def save(company):
   sql = "INSERT INTO companys (name, amount, category_id) VALUES (%s, %s, %s) RETURNING id"
   values = [company.name, company.amount, company.category.id]
   results = run_sql(sql, values)
-  id = results[0]['id']
-  company.id = id
+  company.id = results[0]['id']
   return company
 
 def select_all():
