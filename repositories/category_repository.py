@@ -30,7 +30,7 @@ def select(id):
   result = run_sql(sql, values)[0]
 
   if result is not None:
-    category= Category(result['name'], result['id'])
+    category = Category(result['name'], result['id'])
   return category
 
 
@@ -46,6 +46,7 @@ def delete(id):
 
 def companys(category):
   companys = []
+  
   sql = "SELECT * FROM companys WHERE category_id = %s"
   values = [category.id]
   results = run_sql(sql, values)

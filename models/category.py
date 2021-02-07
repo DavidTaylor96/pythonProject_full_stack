@@ -4,3 +4,5 @@ class Category:
     self.id = id
 
 
+def category_name(self):
+  return f"{self.name}"

@@ -11,16 +11,11 @@
         <label for="category">Category</label>
         <select id="category" name="category_id">
           {% for category in categorys %}
-            <option value="{{ category.id }}">{{ category.name }}</option>
+            <option value="{{ category.id }}">{{ category.category_name() }}</option>
           {% endfor %}
         </select>
     
       <button id="button" type="submit">Add Company</button>
     </form>
   </div>
-  {% for company in companys %}
-  <div>
-    <p>{{ company.name }}, £{{ company.amount }}</p>
-  </div>
-  {% endfor %}
 {% endblock %}

@@ -1,6 +1,6 @@
 class Company():
-  def __init__(self, name, category, amount, id=None):
+  def __init__(self, name, amount, category, id=None):
     self.name = name
-    self.category = category
     self.amount = amount
+    self.category = category
     self.id = id 
