@@ -18,7 +18,7 @@ company_repository.delete_all()
 category1 = Category("Entertainment")
 category_repository.save(category1)
 
-company1 = Company("Tesco", category1, 50)
+company1 = Company("Tesco", 50, category1)
 company_repository.save(company1)
 
 

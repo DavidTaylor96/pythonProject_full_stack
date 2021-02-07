@@ -19,17 +19,17 @@ def company():
 # New
 @companys_blueprint.route('/companys/new', methods=['GET'])
 def new_company():
-  categorys = company_repository.select_all()
-  return render_template('companys/new.html', categorys=categorys)
+  category = category_repository.select_all()
+  return render_template('companys/new.html', all_categorys=categorys)
 
 # Create
 @companys_blueprint.route('/companys', methods=['POST'])
 def create_company():
   name = request.form['name']
   amount = request.form['amount']
-  category = category_repository.select(request.form['category_id'])
-  new_company = Company(name, amount, category)
-  company_repository.save(new_company)
+  category = category_repository.select(request.form['category_id']
+  company = Company(name, amount, category)
+  company_repository.save(company)
   return redirect('/companys')
 
 
