@@ -17,13 +17,13 @@ def company():
   return render_template('index.html', companys=companys)
 
 # New
-@companys_blueprint.route('/', methods=['GET'])
+@companys_blueprint.route('/')
 def new_company():
   categorys = category_repository.select_all()
   return render_template('index.html', categorys=categorys)
 
 # Create
-@companys_blueprint.route('/new', methods=['POST'])
+@companys_blueprint.route('/', methods=['POST'])
 def create_company():
   name = request.form['name']
   amount = request.form['amount']

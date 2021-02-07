@@ -33,7 +33,7 @@ def select(id):
   result = run_sql(sql, values)[0]
 
   if result is not None:
-    category = category_repository.select(id)
+    category = category_repository.select(result['category_id'])
     company = Company(result['name'], result['amount'], category, result['id'])
   return company
 
@@ -49,5 +49,4 @@ def delete(id):
 def update(company):
   sql = "UPDATE companys SET (name, amount, category_id) = (%s, %s, %s) WHERE id = %s"
   values = [company.name, company.amount, company.category.id, company.id]
-  print(values)
   run_sql(sql, values)

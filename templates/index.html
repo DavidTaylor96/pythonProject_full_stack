@@ -6,9 +6,7 @@
  </div>
 
    <!-- Show the user -->
-  <section>
-    <p>David Taylor</p>
-    <p>£150</p>
+  <section class="user">
     {% for user in users %}
       <p>{{ user.full_name }}</p>
        <p>£{{ user.amount }}</p>
@@ -21,20 +19,20 @@
   {% endfor %}
   </section>
 
- <!--Add a different company using this form  --> 
+ <!-- Add a different company using this form   -->
  <div class="container">
-  <form action="/companys" method="POST">
+  <form action="/" method="POST">
       <label for="name">Company Name</label>
-      <input type="text" id="user" name="name" placeholder="Name" required autofocus class="input">
+      <input type="text" name="name" placeholder="Name" required autofocus class="input">
   
       <label for="amount">Amount Spent</label>
-      <input type="number" id="amount" name="amount" placeholder="amount" class="input">
+      <input type="number" name="amount" placeholder="amount" class="input">
       
-      <label for="category_id">Category</label>
-      <select id="category" name="category_id">
-        {% for category in categorys %}
-          <option value="{{ category.id }}">{{ company.category.name }}</option>
-        {% endfor %}
+      <label for="category">Category</label>
+      <select name="category_id" id="category">
+    {% for category in categorys %}
+      <option value="{{ category.id }}">{{ company.category.name }}</option>
+    {% endfor %}
       </select>
     <button id="button" type="submit">Add Company</button>
   </form>
@@ -46,12 +44,11 @@
       <p>{{ company.name }} £{{ company.amount }} {{ company.category.name }}</p>
 
       <a href="/companys/{{ company.id }}/edit"><button type="submit" id="btn2">Edit</button></a>
-
       <form action="/companys/{{ company.id }}/delete" method="POST">
         <button type="submit" id="btn2">Delete</button>
       </form>
-
     {% endfor %}
   </section>
+
 
 {% endblock %}
