@@ -82,12 +82,14 @@ p {
 
 
 /*Tabs*/
-#navbar{
-	z-index: 2;
-	position: relative;
-	top: 7.5%;
-	float: center;
-	margin:15px;
+#navbar{  
+  box-shadow: 0 0 5px gainsboro;
+  margin: 0px auto;
+  width: 100%;
+  padding: 10px;
+	position: fixed;
+  bottom: 0px;
+  background-color: white;
 }
 #navbar ul{
 	margin:0;
