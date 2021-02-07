@@ -8,11 +8,6 @@
 </head>
 <body>
   <header>
-   <section id="content">
-     {% block content %}
-
-     {% endblock %}
-   </section>
    <nav>
     <ul>
       <li>
@@ -24,11 +19,12 @@
       <li>
         <a href="/categorys">Add Category</a>
       </li>
-      <li>
-        <a href="/companys">Add Company</a>
-      </li>
-    </ul>
   </nav>
+  <section id="content">
+    {% block content %}
+
+    {% endblock %}
+  </section>
   </header>
 </body>
 </html>
