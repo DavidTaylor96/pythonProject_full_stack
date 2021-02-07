@@ -23,9 +23,15 @@ body{
 
 
 /* users */
-.user > p{
-  text-decoration: solid;
-
+.user{
+  box-shadow: 0 0 5px gainsboro;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 55px;
+  padding-right: 55px;
+  border-radius: 5px;
+  width: max-content;
+  margin: 0 auto;
 }
 #button1{
   text-decoration: none;
@@ -36,12 +42,12 @@ body{
 /* forms */
 .container{
   width: max-content;
-  box-shadow: 0 0 5px gray;
-  padding: 10px;
+  box-shadow: 0 0 5px gainsboro;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  border-radius: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
 }
 
 .input{
