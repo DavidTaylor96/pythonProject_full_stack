@@ -12,10 +12,10 @@ user_repository.delete_all()
 category_repository.delete_all()
 company_repository.delete_all()
 
-# user1 = User("David Taylor", 137)
-# user_repository.save(user1)
+user1 = User("David Taylor", 137)
+user_repository.save(user1)
 
-category1 = Category("Entertainment")
+category1 = Category("Shopping")
 category_repository.save(category1)
 
 company1 = Company("Tesco", 50, category1)
