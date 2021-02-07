@@ -13,22 +13,22 @@ companys_blueprint = Blueprint("companys", __name__)
 #INDEX
 @companys_blueprint.route('/')
 def company():
-  companys = company_repository.select_all()
-  return render_template('index.html', companys=companys)
+  company = company_repository.select_all()
+  return render_template('index.html', all_company=company)
 
 # New
 @companys_blueprint.route('/')
 def new_company():
-  categorys = category_repository.select_all()
-  return render_template('index.html', categorys=categorys)
+  category = category_repository.select_all()
+  return render_template('index.html', all_category=category)
 
 # Create
 @companys_blueprint.route('/', methods=['POST'])
 def create_company():
   name = request.form['name']
   amount = request.form['amount']
-  category = request.form['category_id']
-  create_company = Company(name, amount, category)
+  category_id = request.form['category_id']
+  create_company = Company(name, amount, category_id)
   company_repository.save(create_company)
   return redirect('/')
 

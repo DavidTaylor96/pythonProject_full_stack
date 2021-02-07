@@ -23,8 +23,13 @@ body{
 
 
 /* users */
+.user > p{
+  text-decoration: solid;
 
-
+}
+#button1{
+  text-decoration: none;
+}
 
 
 
