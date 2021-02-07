@@ -3,7 +3,7 @@ html{
 }
 
 body{
-  font-family:'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -11,6 +11,22 @@ body{
   margin: 0;
 }
 
+
+/* title */
+#title{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+  font-weight: lighter;
+}
+
+#title p{
+  font-size: 14px;
+}
+/* title */
+
+
+/* forms */
 .container{
   display: flex;
   align-content: space-between;
@@ -49,4 +65,42 @@ p {
   font-family: 'Courier New', Courier, monospace;
   font-weight:400;
   text-align: center;
+}
+/* forms */
+
+
+/*Tabs*/
+#navbar{
+	z-index: 2;
+	position: relative;
+	top: 7.5%;
+	float: center;
+	margin:15px;
+}
+#navbar ul{
+	margin:0;
+	padding:0;
+}
+
+#navbar a{
+	color: black;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+#navbar li{
+	display:inline;
+	padding: 0 20px 0 20px;
+}
+
+#navbar a:hover{
+	color: gray;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* edit and delete buttons */
+
+.button2{
+  
 }

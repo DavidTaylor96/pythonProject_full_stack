@@ -10,6 +10,13 @@
   
       <label for="amount">Amount Spent</label>
       <input type="number" id="amount" name="amount" placeholder="amount" class="input" value="{{ company.amount }}">
+
+      <label for="category_id">Category</label>
+      <select id="category" name="category_id">
+        {% for category in categorys %}
+          <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+      </select>
   
     <button id="button" type="submit">Update Company and Amount</button>
   </form>
