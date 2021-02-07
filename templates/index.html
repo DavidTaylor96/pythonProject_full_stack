@@ -12,12 +12,12 @@
     {% for user in users %}
       <p>{{ user.full_name }}</p>
        <p>£{{ user.amount }}</p>
-
+     <div>
       <a href="/users/{{ user.id }}/edit"><button type="submit" id=button1>Edit User</button></a>
-
       <form action="/users/{{ user.id }}/delete" method="POST">
        <button id="button1" type="submit">Delete User</button>
      </form>
+    </div>
   {% endfor %}
   </section>
 
@@ -45,10 +45,12 @@
     {% for company in companys %}
       <p>{{ company.name }} £{{ company.amount }} {{ company.category.name }}</p>
 
-      <a href="/companys/{{ company.id }}/edit"><button type="submit" class="button2">Edit</button></a>
+      <a href="/companys/{{ company.id }}/edit"><button type="submit" id="btn2">Edit</button></a>
+
       <form action="/companys/{{ company.id }}/delete" method="POST">
-        <button class="button2" type="submit">Delete</button>
+        <button type="submit" id="btn2">Delete</button>
       </form>
+
     {% endfor %}
   </section>
 
