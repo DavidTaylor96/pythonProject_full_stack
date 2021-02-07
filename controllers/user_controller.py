@@ -7,25 +7,25 @@ users_blueprint = Blueprint("users", __name__)
 
 
 # INDEX
-@users_blueprint.route('/users')
+@users_blueprint.route('/')
 def users():
   users = user_repository.select_all()
-  return render_template("users/index.html", users=users)
+  return render_template("index.html", users=users)
 
 # #New
-@users_blueprint.route('/users/new')
+@users_blueprint.route('/new')
 def new_user():
   users = user_repository.select_all()
-  return render_template("users/new.html", users=users)
+  return render_template("new.html", users=users)
 
 #Create
-@users_blueprint.route('/users', methods=['POST'])
+@users_blueprint.route('/', methods=['POST'])
 def create_user():
   name = request.form["username"]
   amount = request.form["amount"]
   new_user = User(name, amount)
   user_repository.save(new_user)
-  return redirect('/users')
+  return redirect('/')
 
 # Edit
 @users_blueprint.route("/users/<id>/edit")
@@ -40,10 +40,10 @@ def update_user(id):
   amount = request.form["amount"]
   updated_user = User(name, amount, id)
   user_repository.update(updated_user)
-  return redirect("/users")
+  return redirect("/")
 
 # Delete
 @users_blueprint.route("/users/<id>/delete", methods=["POST"])
 def delete_user(id):
   user_repository.delete(id)
-  return redirect("/users")
+  return redirect("/")
