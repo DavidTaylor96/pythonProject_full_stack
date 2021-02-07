@@ -4,7 +4,7 @@
 
    {% for company in companys %}
    <section>
-     <p>{{ company.name }} £{{ company.amount }}</p>
+     <p>{{ company.name }} £{{ company.amount }} {{ company.category.name }}</p>
      <a href="/companys/{{ company.id }}/edit"><button type="submit" id=button1>Edit Company</button></a>
      <form action="/companys/{{ company.id }}/delete" method="POST">
       <button id="button1" type="submit">Delete companys</button>
