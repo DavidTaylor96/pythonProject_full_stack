@@ -28,14 +28,17 @@ body{
   box-shadow: 0 0 5px gainsboro;
   padding-top: 10px;
   padding-bottom: 20px;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding-left: 75px;
+  padding-right: 75px;
   border-radius: 5px;
   width: max-content;
   margin: 0 auto;
 }
 #button1{
-  text-decoration: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+
 }
 
 

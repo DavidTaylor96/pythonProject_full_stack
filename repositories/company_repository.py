@@ -13,7 +13,6 @@ def save(company):
   values = [company.name, company.amount, company.category.id]
   results = run_sql(sql, values)
   company.id = results[0]['id']
-  return company
 
 def select_all():
   companys = []

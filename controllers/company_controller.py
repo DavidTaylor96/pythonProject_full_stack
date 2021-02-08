@@ -5,6 +5,7 @@ from models.company import Company
 
 import repositories.company_repository as company_repository
 import repositories.category_repository as category_repository
+import repositories.user_repository as user_repository
 
 
 companys_blueprint = Blueprint("companys", __name__)
@@ -13,14 +14,10 @@ companys_blueprint = Blueprint("companys", __name__)
 #INDEX
 @companys_blueprint.route('/')
 def company():
-  company = company_repository.select_all()
-  return render_template('index.html', all_company=company)
-
-# New
-@companys_blueprint.route('/')
-def new_company():
   category = category_repository.select_all()
-  return render_template('categorys/index.html', all_category=category)
+  company = company_repository.select_all()
+  users = user_repository.select_all()
+  return render_template('index.html', all_company=company, all_category=category, users=users)
 
 # Create
 @companys_blueprint.route('/', methods=['POST'])
@@ -32,12 +29,12 @@ def create_company():
   company_repository.save(add_company)
   return redirect('/')
 
-
 # Edit
 @companys_blueprint.route("/companys/<id>/edit")
 def edit_company(id):
   company = company_repository.select(id)
-  return render_template('companys/edit.html', company=company)
+  category = category_repository.select_all()
+  return render_template('companys/edit.html', company=company, all_category=category)
 
 # Update
 @companys_blueprint.route("/companys/<id>", methods=['POST'])

@@ -11,9 +11,9 @@
       <p>{{ user.full_name }}</p>
        <p>£{{ user.amount }}</p>
      <div>
-      <a href="/users/{{ user.id }}/edit"><button type="submit" id=button1>Edit User</button></a>
+      <a href="/users/{{ user.id }}/edit"><button type="submit" id=button4>Edit User</button></a>
       <form action="/users/{{ user.id }}/delete" method="POST">
-       <button id="button1" type="submit">Delete User</button>
+       <button id="button1" type="submit"><i class="fa fa-close"></i></button>
      </form>
     </div>
   {% endfor %}
