@@ -21,6 +21,7 @@ category_repository.save(category1)
 company1 = Company("Tesco", 50, category1, user1)
 company_repository.save(company1)
 
+print(company1)
 
 
 pdb.set_trace()

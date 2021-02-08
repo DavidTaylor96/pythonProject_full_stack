@@ -13,6 +13,7 @@ def save(company):
   values = [company.name, company.amount, company.category.id, company.user.id]
   results = run_sql(sql, values)
   company.id = results[0]['id']
+  return company
 
 def select_all():
   companys = []
@@ -21,7 +22,7 @@ def select_all():
   results = run_sql(sql)
   for row in results:
     category = category_repository.select(row['category_id'])
-    user = user_repository.selcet(row['user_id'])
+    user = user_repository.select(row['user_id'])
     company = Company(row['name'], row['amount'], category, user, row['id'])
     companys.append(company)
   return companys

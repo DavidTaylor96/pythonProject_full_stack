@@ -16,6 +16,13 @@
         {% for category in all_category %}
           <option value="{{ category.id }}">{{ category.name }}</option>
         {% endfor %}
+
+      </select>
+        <label for="user">Account</label>
+        <select name="user_id" id="user">
+        {% for user in users %}
+          <option value="{{ user.id }}">{{user.full_name }}</option>
+        {% endfor %}
       </select>
   
     <button id="button" type="submit">Update Company and Amount</button>

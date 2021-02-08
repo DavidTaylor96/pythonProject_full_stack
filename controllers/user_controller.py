@@ -5,7 +5,7 @@ import repositories.user_repository as user_repository
 
 users_blueprint = Blueprint("users", __name__)
 
-# #New
+#New
 @users_blueprint.route('/users/new')
 def new_user():
   users = user_repository.select_all()

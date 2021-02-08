@@ -27,6 +27,7 @@ def create_company():
   category = category_repository.select(request.form['category_id'])
   users = user_repository.select(request.form['user_id'])
   add_company = Company(name, amount, category, users)
+# Make an update statment. 
   company_repository.save(add_company)
   return redirect('/')
 
@@ -35,6 +36,7 @@ def create_company():
 def edit_company(id):
   company = company_repository.select(id)
   category = category_repository.select_all()
+  users = user_repository.select_all()
   return render_template('companys/edit.html', company=company, all_category=category, users=users)
 
 # Update

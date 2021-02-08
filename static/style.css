@@ -1,5 +1,6 @@
 html{
   scroll-behavior: smooth;
+  /* background-color: #8ba5a5; */
 }
 
 body{
@@ -11,28 +12,45 @@ body{
 
 /* title */
 #title{
-  margin: 0;
+  /* background-color: #daddc7; */
+  box-shadow: 0 0 5px  #daddc7;
+  margin-top: 10px;
+  padding: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  text-decoration: underline;
   font-weight: lighter;
 }
 
 #title p{
   font-size: 14px;
 }
+
+#title1{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: max-content;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #fff;
+}
 /* title */
 
 
 /* users */
 .user{
-  box-shadow: 0 0 5px gainsboro;
+  /* background-color: #daddc7; */
+  box-shadow: 0 0 5px  #daddc7;
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 75px;
   padding-right: 75px;
   border-radius: 5px;
   width: max-content;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 #button1{
   border: none;
@@ -46,7 +64,8 @@ body{
 /* forms */
 .container{
   width: max-content;
-  box-shadow: 0 0 5px gainsboro;
+  /* background-color: #daddc7; */
+  box-shadow: 0 0 5px  #daddc7;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -64,6 +83,14 @@ body{
   box-sizing: border-box;
 }
 
+.option{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  text-align: center;
+}
 #button{
   display: block;
   width: 100%;
