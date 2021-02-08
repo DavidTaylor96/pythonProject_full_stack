@@ -2,9 +2,11 @@ from flask import Flask, render_template, request, redirect, Blueprint
 
 from models.category import Category
 from models.company import Company
+from models.account import Account
 
 import repositories.company_repository as company_repository
 import repositories.category_repository as category_repository
+import repositories.account_repository as account_repository
 import repositories.user_repository as user_repository
 
 
@@ -16,8 +18,9 @@ companys_blueprint = Blueprint("companys", __name__)
 def company():
   category = category_repository.select_all()
   company = company_repository.select_all()
+  account = account_repository.select_all()
   users = user_repository.select_all()
-  return render_template('index.html', all_company=company, all_category=category, users=users)
+  return render_template('index.html', all_company=company, all_category=category, accounts=account, users=users)
 
 # Create
 @companys_blueprint.route('/', methods=['POST'])
@@ -25,9 +28,8 @@ def create_company():
   name = request.form['name']
   amount = request.form['amount']
   category = category_repository.select(request.form['category_id'])
-  users = user_repository.select(request.form['user_id'])
-  add_company = Company(name, amount, category, users)
-# Make an update statment. 
+  accounts = account_repository.select(request.form['account_id'])
+  add_company = Company(name, amount, category, accounts)
   company_repository.save(add_company)
   return redirect('/')
 
@@ -36,8 +38,8 @@ def create_company():
 def edit_company(id):
   company = company_repository.select(id)
   category = category_repository.select_all()
-  users = user_repository.select_all()
-  return render_template('companys/edit.html', company=company, all_category=category, users=users)
+  account = account_repository.select_all()
+  return render_template('companys/edit.html', company=company, all_category=category, accounts=account)
 
 # Update
 @companys_blueprint.route("/companys/<id>", methods=['POST'])
@@ -45,8 +47,8 @@ def update_company(id):
   name = request.form["name"]
   amount = request.form["amount"]
   category = category_repository.select(request.form['category_id'])
-  user = user_repository.select(request.form['user_id'])
-  update_company = Company(name, amount, category, user, id)
+  account = account_repository.select(request.form['account_id'])
+  update_company = Company(name, amount, category, account, id)
   company_repository.update(update_company)
   return redirect("/") 
 

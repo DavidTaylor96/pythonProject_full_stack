@@ -20,8 +20,8 @@
       </select>
         <label for="user">Account</label>
         <select name="user_id" id="user">
-        {% for user in users %}
-          <option value="{{ user.id }}">{{user.full_name }}</option>
+        {% for account in accounts %}
+          <option value="{{ account.id }}">{{ account.account_name }}</option>
         {% endfor %}
       </select>
   

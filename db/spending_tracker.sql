@@ -1,12 +1,22 @@
-DROP TABLE IF EXISTS companys;
-DROP TABLE IF EXISTS categorys;
-DROP TABLE IF EXISTS users;  
+DROP TABLE companys;
+DROP TABLE categorys;
+DROP TABLE users;  
+DROP TABLE accounts;
+
+
+CREATE TABLE accounts (
+  id SERIAL PRIMARY KEY,
+  account_name VARCHAR(255),
+  amount INT
+);
+
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   full_name VARCHAR(255),
-  amount INT
+  account_id INT REFERENCES accounts(id)
 );
+
 
 CREATE TABLE categorys (
   id SERIAL PRIMARY KEY,
@@ -18,5 +28,5 @@ CREATE TABLE companys (
   name VARCHAR(255),
   amount INT,
   category_id INT REFERENCES categorys(id) ON DELETE CASCADE,
-  user_id INT REFERENCES users(id) ON DELETE CASCADE
+  account_id INT REFERENCES accounts(id) ON DELETE CASCADE
 );
