@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, Blueprint
+
 from models.account import Account
+
 import repositories.account_repository as account_repository
 
 
-account_blueprint = Blueprint("account", __name__)
+account_blueprint = Blueprint("accounts", __name__)
 
 #New
 @account_blueprint.route('/accounts/new')
