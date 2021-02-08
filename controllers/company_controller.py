@@ -24,8 +24,9 @@ def company():
 def create_company():
   name = request.form['name']
   amount = request.form['amount']
-  category = request.form["category_id"]
-  add_company = Company(name, amount, category)
+  category = category_repository.select(request.form['category_id'])
+  users = user_repository.select(request.form['user_id'])
+  add_company = Company(name, amount, category, users)
   company_repository.save(add_company)
   return redirect('/')
 
@@ -34,15 +35,16 @@ def create_company():
 def edit_company(id):
   company = company_repository.select(id)
   category = category_repository.select_all()
-  return render_template('companys/edit.html', company=company, all_category=category)
+  return render_template('companys/edit.html', company=company, all_category=category, users=users)
 
 # Update
 @companys_blueprint.route("/companys/<id>", methods=['POST'])
 def update_company(id):
   name = request.form["name"]
   amount = request.form["amount"]
-  category = request.form['category_id']
-  update_company = Company(name, amount, category)
+  category = category_repository.select(request.form['category_id'])
+  user = user_repository.select(request.form['user_id'])
+  update_company = Company(name, amount, category, user, id)
   company_repository.update(update_company)
   return redirect("/") 
 

@@ -34,7 +34,14 @@
       <option value="{{ category.id }}">{{category.name }}</option>
       {% endfor %}
       </select>
-    <button id="button" type="submit">Add Company</button>
+
+      <label for="user">Account</label>
+      <select name="user_id" id="user">
+      {% for user in users %}
+      <option value="{{ user.id }}">{{users.name }}</option>
+      {% endfor %}
+      </select>
+    <button id="button" type="submit">Submit</button>
   </form>
 
 <!--Display the company that have been added-->

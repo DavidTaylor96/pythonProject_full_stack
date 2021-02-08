@@ -19,4 +19,5 @@ CREATE TABLE companys (
   name VARCHAR(255),
   amount INT,
   category_id INT REFERENCES categorys(id)
+  user_id INT REFERENCES users(id)
 );
