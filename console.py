@@ -18,7 +18,7 @@ user_repository.save(user1)
 category1 = Category("Shopping")
 category_repository.save(category1)
 
-company1 = Company("Tesco", 50, category1)
+company1 = Company("Tesco", 50, category1, user1)
 company_repository.save(company1)
 
 

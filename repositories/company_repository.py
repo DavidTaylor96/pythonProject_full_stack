@@ -9,7 +9,7 @@ import repositories.company_repository as company_repository
 import repositories.category_repository as category_repository
 
 def save(company):
-  sql = "INSERT INTO companys (name, amount, category_id, user_id) VALUES (%s, %s, %s) RETURNING id"
+  sql = "INSERT INTO companys (name, amount, category_id, user_id) VALUES (%s, %s, %s, %s) RETURNING id"
   values = [company.name, company.amount, company.category.id, company.user.id]
   results = run_sql(sql, values)
   company.id = results[0]['id']

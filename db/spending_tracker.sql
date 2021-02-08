@@ -18,6 +18,6 @@ CREATE TABLE companys (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   amount INT,
-  category_id INT REFERENCES categorys(id)
+  category_id INT REFERENCES categorys(id),
   user_id INT REFERENCES users(id)
 );
