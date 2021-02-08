@@ -14,14 +14,14 @@ def save(category):
 
 
 def select_all():
-    categorys = []
+  categorys = []
 
-    sql = "SELECT * FROM categorys"
-    results = run_sql(sql)
-    for row in results:
-        category = Category(row['name'], row['id'])
-        categorys.append(category)
-    return categorys
+  sql = "SELECT * FROM categorys"
+  results = run_sql(sql)
+  for row in results:
+      category = Category(row['name'], row['id'])
+      categorys.append(category)
+  return categorys
 
 def select(id):
   category = None
@@ -44,14 +44,14 @@ def delete(id):
   values = [id]
   run_sql(sql, values)
 
-def companys(category):
-  companys = []
+# def companys(category):
+#   companys = []
   
-  sql = "SELECT * FROM companys WHERE category_id = %s"
-  values = [category.id]
-  results = run_sql(sql, values)
+#   sql = "SELECT * FROM companys WHERE category_id = %s"
+#   values = [category.id]
+#   results = run_sql(sql, values)
 
-  for row in results:
-    company = Company(row['name'], row['amount'], row['category_id'], row['id'])
-    companys.append(company)
-  return companys
+#   for row in results:
+#     company = Company(row['name'], row['amount'], row['category_id'], row['id'])
+#     companys.append(company)
+#   return companys

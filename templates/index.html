@@ -26,12 +26,12 @@
       <input type="text" name="name" placeholder="Name" required autofocus class="input">
   
       <label for="amount">Amount Spent</label>
-      <input type="number" name="amount" placeholder="amount" class="input">
+      <input type="number" name="amount" placeholder="Amount" class="input">
       
       <label for="category">Category</label>
       <select name="category_id" id="category">
       {% for category in all_category %}
-      <option value="{{ category.id }}">{{ company.category.name }}</option>
+      <option value="{{ category.id }}">{{category.name }}</option>
       {% endfor %}
       </select>
     <button id="button" type="submit">Add Company</button>
@@ -42,8 +42,7 @@
   <section>
     <p>Recent Purchases</p>
     {% for company in all_company %}
-      <p>{{ company.name }} £{{ company.amount }} {{ company.category.name }}</p>
-
+      <p>{{ company.name }} £{{ company.amount }} {{company.category.name }}</p>
       <a href="/companys/{{ company.id }}/edit"><button type="submit" id="btn2">Edit</button></a>
       <form action="/companys/{{ company.id }}/delete" method="POST">
         <button type="submit" id="btn2">Delete</button>
