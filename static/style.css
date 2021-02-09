@@ -1,6 +1,6 @@
 html{
   scroll-behavior: smooth;
-  /* background-color: #8ba5a5; */
+  background-color: #f7f7f7;
 }
 
 body{
@@ -10,13 +10,15 @@ body{
 
 /* title */
 #title{
-  /* background-color: #daddc7; */
+  background-color: #fff;
   box-shadow: 0 0 5px  #daddc7;
   margin-top: 10px;
   padding: 5px;
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #title p{
@@ -24,22 +26,21 @@ body{
 }
 
 #title1{
-  display: flex;
-  flex-wrap: wrap;
+  background-color: #f7f7f7;
   margin: 10px auto;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
   width: max-content;
-  border: 1px solid white;
   border-radius: 10px;
-  background-color: #fff;
+  box-shadow: 0 0 5px #d6d2d2;
 }
 /* ------------------------------------ */
 
 /* users */
 .main-user{
+  background-color: #fff;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -47,24 +48,47 @@ body{
   box-shadow: 0 0 5px gainsboro;
   width: max-content;
   margin: 10px auto;
-  padding: 10px;
+  padding: 25px;
 }
 
 .account{
   font-size: 12px;
 }
-
+.user-account{
+  padding: 5px 10px;
+  margin-top: 0px;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  box-shadow: 0 0 2px gainsboro;
+}
 .user{
   display: flex;
-  flex-flow: row wrap;
   align-items: center;
-  padding: 10px;
+  align-self: flex-start;
+  padding: 5px 0px;
+  margin-top: 0px
+}
+
+.user > h3{
+  text-decoration: underline;
+  text-align: center;
+}
+
+.edit-button{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
 }
 
 #button3{
   border: none;
   background-color: white;
-  border-radius: 50%;
+  padding-right: 0px
+}
+#button2{
+  border: none;
+  background-color: white;
+  padding-right: 0px;
 }
 
 #button3:hover{
@@ -75,15 +99,16 @@ body{
 
 /* Home form */
 .main-container{
+  background-color: #fff;
   width: max-content;
   box-shadow: 0 0 5px  #daddc7;
-  padding: 20px;
+  padding: 30px;
   margin:  10px auto;
   border-radius: 5px;
-
 }
 
 .main-option{
+  color: gray;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -94,11 +119,16 @@ body{
   text-align: center;
 }
 
+.main-option::selection{
+  color: black;
+}
+
 /* ------------------------------------------- */
 
 
 /* forms */
 .container{
+  background-color: #fff;
   width: max-content;
   box-shadow: 0 0 5px  #daddc7;
   padding: 20px;
@@ -107,7 +137,7 @@ body{
 }
 
 .input{
-  border: 1px solid gray;
+  border: 1px solid gainsboro;
   width: max-content;
   padding: 12px 20px;
   margin: 8px 0;
@@ -126,7 +156,7 @@ body{
 #button{
   display: block;
   width: 100%;
-  background-color: midnightblue;
+  background-color: #83bec7;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -136,7 +166,7 @@ body{
 }
 
 #button:hover{
-  box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px lightblue;
 }
 /* forms */
 /* -------------------------------------------- */
@@ -173,6 +203,10 @@ body{
 	text-decoration: underline;
 	cursor: pointer;
 }
+
+#navbar a:active{
+  text-decoration: underline;
+}
 /* ------------------------------------------ */
 
 
@@ -180,9 +214,11 @@ body{
 #heading{
   text-align: center;
   margin-top: 15vh;
+  text-decoration: underline;
 }
 
 .main-category{
+  background-color: #fff;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -191,6 +227,7 @@ body{
   width: max-content;
   margin:  0 auto;
   padding: 10px 50px;
+  border-radius: 5px;
 }
 
 #categorys{
@@ -213,18 +250,18 @@ body{
 #button-add{
   display: block;
   width: 80%;
-  background-color: midnightblue;
-  color: white;
+  background-color: #83bec7;
+  color: #f7f7f7;
   padding: 14px 20px 14px 20px;
   margin: 5px auto;
-  margin-left: 18px;
+  margin-left: 5%;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 #button-add:hover{
-  box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px lightblue;
 }
 
 nav ul{
@@ -235,11 +272,15 @@ nav ul{
 /* display purchases */
 
 .display-heading{
-  width: max-content;
-  box-shadow: 0 0 5px  #daddc7;
-  padding:  10px 15px;
-  margin:  10px auto 50px auto;
+  background-color: #fff;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
   border-radius: 5px;
+  box-shadow: 0 0 5px gainsboro;
+  width: max-content;
+  margin: 10px auto 50px auto;
+  padding: 10px;
 }
 
 .display-heading > h4{
@@ -249,11 +290,11 @@ nav ul{
 
 .display{
   display: flex;
-  justify-content: center;
+  flex-flow: row wrap;
   align-items: center;
-  margin: 10px auto;
+  align-self: flex-start;
+  padding: 0px;
   font-size: 12px;
-  text-decoration: none;
 }
 
 #button2{

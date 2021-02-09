@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
  {% block content %}
  <div id="title">
-  <h2 id="title1">Taylor's Savings</h2>
+  <h2 id="title1">Taylor Savings</h2>
   <p>Tailored to your savings</p>
  </div>
 
@@ -9,24 +9,26 @@
   <section class="main-user">
     {% for user in users %}
     <div class="user">
-      <p>{{ user.full_name }}</p>
-      <a href="/users/{{ user.id }}/edit"><button type="submit" id=button3><i class="fa fa-edit"></i></button></a>
-      <form action="/users/{{ user.id }}/delete" method="POST">
-       <button id="button3" type="submit"><i class="fa fa-close"></i></button>
-     </form>
-    </div>
-  {% endfor %}
-  
-    {% for account in accounts  %}
-    <div class="user">
-    <p class="account">{{ account.account_name }}:  £{{ account.amount }}</p>
-      <a href="/accounts/{{ account.id }}/edit"><button type="submit" id=button3><i class="fa fa-edit"></i></button></a>
-      <form action="/accounts/{{ account.id }}/delete" method="POST">
-      <button id="button3" type="submit"><i class="fa fa-close"></i></button>
-    </form> 
-  </div>
-
+      <h3>{{ user.full_name }}</h3>
+       <div class="edit-button">
+         <a href="/users/{{ user.id }}/edit"><button type="submit" id=button3><i class="fa fa-edit"></i></button></a>
+         <form action="/users/{{ user.id }}/delete" method="POST">
+         <button id="button2" type="submit"><i class="fa fa-close"></i></button>
+         </form>
+       </div>
+      </div>
     {% endfor %}
+    <div class="user-account">
+    {% for account in accounts  %}
+      <div class="user">
+          <p class="account">{{ account.account_name }}:  £{{ account.amount }}</p>
+            <a href="/accounts/{{ account.id }}/edit"><button type="submit" id=button3><i class="fa fa-edit"></i></button></a>
+            <form action="/accounts/{{ account.id }}/delete" method="POST">
+            <button id="button2" type="submit"><i class="fa fa-close"></i></button>
+          </form> 
+        </div>
+    {% endfor %}
+    </div>
   </section>
 
  <!-- Add a different company using this form   -->
@@ -40,7 +42,7 @@
 
       <select name="category_id" id="category" class="main-option">
       {% for category in all_category %}
-      <option value="{{ category.id }}">{{category.name }}</option>
+      <option value="{{ category.id }}" >{{category.name }}</option>
       {% endfor %}
       </select>
 
@@ -53,19 +55,19 @@
 
     <button id="button" type="submit">Submit</button>
   </form>
+</div>
 
 <!--Display the company that have been added-->
-</div>
   <section class="display-heading">
-    <h4>Recent Purchases</h4>
-    <div class="display">
+    <h4>Recent Purchase</h4>
     {% for company in all_company %}
+    <div class="display">
       <p>{{ company.name }} £{{ company.amount }} {{company.category.name }}</p>
-      <a href="/companys/{{ company.id }}/edit"><button type="submit" id="button2"><i class="fa fa-edit"></i></button></a>
+      <a href="/companys/{{ company.id }}/edit"><button type="submit" id="button3"><i class="fa fa-edit"></i></button></a>
       <form action="/companys/{{ company.id }}/delete" method="POST">
         <button type="submit" id="button2"><i class="fa fa-close"></i></button>
       </form>
+    </div> 
     {% endfor %}
-  </div>
   </section>
 {% endblock %}
