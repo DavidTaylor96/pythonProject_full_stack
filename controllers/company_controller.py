@@ -34,7 +34,7 @@ def create_company():
   print(account)
   add_company = Company(name, amount, category, account)
   company_repository.save(add_company)
-  account.amount -= int(amount)
+  account.amount -= float(amount)
   account_repository.update(account)
   return redirect('/')
 

@@ -7,7 +7,7 @@ DROP TABLE accounts;
 CREATE TABLE accounts (
   id SERIAL PRIMARY KEY,
   account_name VARCHAR(255),
-  amount INT
+  amount FLOAT
 );
 
 
@@ -26,7 +26,7 @@ CREATE TABLE categorys (
 CREATE TABLE companys (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  amount INT,
+  amount FLOAT,
   category_id INT REFERENCES categorys(id) ON DELETE CASCADE,
   account_id INT REFERENCES accounts(id) ON DELETE CASCADE
 );

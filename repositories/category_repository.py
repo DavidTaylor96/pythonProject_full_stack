@@ -43,15 +43,3 @@ def delete(id):
   sql = "DELETE FROM categorys WHERE id = %s"
   values = [id]
   run_sql(sql, values)
-
-# def companys(category):
-#   companys = []
-  
-#   sql = "SELECT * FROM companys WHERE category_id = %s"
-#   values = [category.id]
-#   results = run_sql(sql, values)
-
-#   for row in results:
-#     company = Company(row['name'], row['amount'], row['category_id'], row['id'])
-#     companys.append(company)
-#   return companys

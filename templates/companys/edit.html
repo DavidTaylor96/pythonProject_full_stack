@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Update Company or Amount</h2>
+<h2 id="heading">Update Company or Amount</h2>
 
-<div class="container">
+<div class="main-container">
   <form action="/companys/{{ company.id }}" method="POST">
       <label for="name">Name of Company</label>
-      <input type="text" id="user" name="name" placeholder="Name" required autofocus class="input" value="{{ company.name }}">
+      <input type="text" id="user" name="name" placeholder="Name" required autofocus class="update-input" value="{{ company.name }}">
   
       <label for="amount">Amount Spent</label>
-      <input type="number" id="amount" name="amount" placeholder="amount" class="input" value="{{ company.amount }}">
+      <input type="number" id="amount" name="amount" placeholder="amount" class="update-input" value="{{ company.amount }}">
 
       <label for="category_id">Category</label>
-      <select id="category" name="category_id">
+      <select id="category" name="category_id" class="main-option">
         {% for category in all_category %}
           <option value="{{ category.id }}">{{ category.name }}</option>
         {% endfor %}
 
       </select>
         <label for="user">Account</label>
-        <select name="user_id" id="user">
+        <select name="user_id" id="user" class="main-option">
         {% for account in accounts %}
           <option value="{{ account.id }}">{{ account.account_name }}</option>
         {% endfor %}

@@ -10,7 +10,7 @@ body{
 
 /* title */
 #title{
-  background-color: #fff;
+  background-color: #3c8c8f;
   box-shadow: 0 0 5px  #daddc7;
   margin-top: 10px;
   padding: 5px;
@@ -23,6 +23,7 @@ body{
 
 #title p{
   font-size: 14px;
+  color: white;
 }
 
 #title1{
@@ -34,7 +35,7 @@ body{
   padding-left: 50px;
   width: max-content;
   border-radius: 10px;
-  box-shadow: 0 0 5px #d6d2d2;
+  box-shadow: 0 0 5px #347a7d ;
 }
 /* ------------------------------------ */
 
@@ -43,7 +44,7 @@ body{
   background-color: #fff;
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 5px;
   box-shadow: 0 0 5px gainsboro;
   width: max-content;
@@ -64,7 +65,6 @@ body{
 .user{
   display: flex;
   align-items: center;
-  align-self: flex-start;
   padding: 5px 0px;
   margin-top: 0px
 }
@@ -76,13 +76,14 @@ body{
 
 .edit-button{
   display: flex;
-  flex-flow: row wrap;
-  align-items: flex-end;
+  flex-flow: row;
+  align-self: space-between;
 }
 
 #button3{
   border: none;
   background-color: white;
+  color: #317375;
   padding-right: 0px
 }
 #button2{
@@ -102,7 +103,7 @@ body{
   background-color: #fff;
   width: max-content;
   box-shadow: 0 0 5px  #daddc7;
-  padding: 30px;
+  padding: 40px;
   margin:  10px auto;
   border-radius: 5px;
 }
@@ -123,6 +124,14 @@ body{
   color: black;
 }
 
+.update-input{
+  border: 1px solid gainsboro;
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border-radius: 3px;
+}
 /* ------------------------------------------- */
 
 
@@ -156,7 +165,7 @@ body{
 #button{
   display: block;
   width: 100%;
-  background-color: #83bec7;
+  background-color: #3c8c8f;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -173,13 +182,13 @@ body{
 /*Nav bar*/
 
 #navbar{  
-  box-shadow: 0 0 5px gainsboro;
+  box-shadow: 0 0 3px #3c8c8f;
   margin: 0px auto;
   width: 100%;
   padding: 10px;
 	position: fixed;
   bottom: 0px;
-  background-color: white;
+  background-color: #3c8c8f;
 }
 #navbar ul{
   text-align: center;
@@ -188,7 +197,7 @@ body{
 }
 
 #navbar a{
-	color: black;
+	color: white;
 	text-decoration: none;
 	font-size: 10px;
 }
@@ -212,9 +221,16 @@ body{
 
 /* Category form */
 #heading{
+  padding: 10px;
+  background-color: #3c8c8f;
+  color: white;
+  box-shadow: 0 0 5px  #daddc7;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
   text-align: center;
-  margin-top: 15vh;
-  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .main-category{
@@ -248,13 +264,12 @@ body{
 }
 
 #button-add{
-  display: block;
-  width: 80%;
-  background-color: #83bec7;
-  color: #f7f7f7;
+  width: 45%;
+  background-color: #3c8c8f;
+  color: #fff;
   padding: 14px 20px 14px 20px;
   margin: 5px auto;
-  margin-left: 5%;
+  margin-left: 25%;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -307,3 +322,14 @@ nav ul{
   color: #d4194e;
 }
 /* ----------------------------------------- */
+
+
+@media(max-width: 600px){
+  #button-add{
+    width: 80%;
+    margin-left: 5%;
+  }
+  .main-container{
+    padding: 35px;
+  }
+}
