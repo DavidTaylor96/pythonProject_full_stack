@@ -27,10 +27,15 @@ def company():
 def create_company():
   name = request.form['name']
   amount = request.form['amount']
+
   category = category_repository.select(request.form['category_id'])
-  accounts = account_repository.select(request.form['account_id'])
-  add_company = Company(name, amount, category, accounts)
+  account = account_repository.select(request.form['account_id'])
+  print(category)
+  print(account)
+  add_company = Company(name, amount, category, account)
   company_repository.save(add_company)
+  account.amount -= int(amount)
+  account_repository.update(account)
   return redirect('/')
 
 # Edit

@@ -1,15 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h2>Update User</h2>
-
 <div class="container">
   <form action="/users/{{ user.id }}" method="POST">
-      <label for="username">Name</label>
+      <label for="username"> Update Name</label>
       <input type="text" id="user" name="username" placeholder="Name" required autofocus class="input" value="{{ user.full_name }}">
-  
-      <label for="amount">Amount</label>
-      <input type="number" id="amount" name="amount" placeholder="Amount" class="input" value="{{ user.amount }}">
   
     <button id="button" type="submit">Update User</button>
   </form>

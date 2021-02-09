@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-   <h2>Categorys</h2>
-
+   <h2 id="heading">Categorys</h2>
+<div class="main-category">
    {% for category in categorys %}
-   <section>
+   <section id="categorys">
      <p>{{ category.name }}</p>
      <form action="/categorys/{{ category.id }}/delete" method="POST">
-      <button id="button1" type="submit">Delete Categorys</button>
+      <button id="button1" type="submit"><i class="fa fa-close"></i></button>
     </form>
    </section>
    {% endfor %}
+  </div>
    <nav>
     <ul>
       <li>
-        <a href="/categorys/new"><button type="submit">Add Categorys</button></a>
+        <a href="/categorys/new"><button type="submit" id="button-add">Add Categorys</button></a>
       </li>
     </ul>
   </nav>

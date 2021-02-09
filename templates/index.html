@@ -6,44 +6,46 @@
  </div>
 
    <!-- Show the user -->
-  <section class="user">
+  <section class="main-user">
     {% for user in users %}
+    <div class="user">
       <p>{{ user.full_name }}</p>
-     <div>
-      <a href="/users/{{ user.id }}/edit"><button type="submit" id=button1><i class="far fa-edit"></i></button></a>
+      <a href="/users/{{ user.id }}/edit"><button type="submit" id=button3><i class="fa fa-edit"></i></button></a>
       <form action="/users/{{ user.id }}/delete" method="POST">
-       <button id="button1" type="submit"><i class="fa fa-close"></i></button>
+       <button id="button3" type="submit"><i class="fa fa-close"></i></button>
      </form>
     </div>
   {% endfor %}
-  <div>
+  
     {% for account in accounts  %}
+    <div class="user">
     <p class="account">{{ account.account_name }}:  £{{ account.amount }}</p>
-      <a href="/accounts/{{ account.id }}/edit"><button type="submit" id=button1><i class="far fa-edit"></i></button></a>
+      <a href="/accounts/{{ account.id }}/edit"><button type="submit" id=button3><i class="fa fa-edit"></i></button></a>
       <form action="/accounts/{{ account.id }}/delete" method="POST">
-      <button id="button1" type="submit"><i class="fa fa-close"></i></button>
+      <button id="button3" type="submit"><i class="fa fa-close"></i></button>
     </form> 
-    {% endfor %}
   </div>
+
+    {% endfor %}
   </section>
 
  <!-- Add a different company using this form   -->
- <div class="main_container">
+ <div class="main-container">
   <form action="/" method="POST">
       <label for="name">Company & Amount</label>
       <input type="text" name="name" placeholder="Name" required autofocus class="input">
   
       <input type="number" name="amount" placeholder="Amount" class="input">
       
-      <label for="category">Category</label>
-      <select name="category_id" id="category" class="option">
+
+      <select name="category_id" id="category" class="main-option">
       {% for category in all_category %}
       <option value="{{ category.id }}">{{category.name }}</option>
       {% endfor %}
       </select>
 
-      <label for="user">Account</label>
-      <select name="user_id" id="user" class="option">
+
+      <select name="account_id" id="user" class="main-option">
       {% for account in accounts %}
       <option value="{{ account.id }}">{{ account.account_name }}</option>
       {% endfor %}
@@ -54,14 +56,16 @@
 
 <!--Display the company that have been added-->
 </div>
-  <section>
-    <p>Recent Purchases</p>
+  <section class="display-heading">
+    <h4>Recent Purchases</h4>
+    <div class="display">
     {% for company in all_company %}
       <p>{{ company.name }} £{{ company.amount }} {{company.category.name }}</p>
-      <a href="/companys/{{ company.id }}/edit"><button type="submit" id="btn2">Edit</button></a>
+      <a href="/companys/{{ company.id }}/edit"><button type="submit" id="button2"><i class="fa fa-edit"></i></button></a>
       <form action="/companys/{{ company.id }}/delete" method="POST">
-        <button type="submit" id="btn2">Delete</button>
+        <button type="submit" id="button2"><i class="fa fa-close"></i></button>
       </form>
     {% endfor %}
+  </div>
   </section>
 {% endblock %}

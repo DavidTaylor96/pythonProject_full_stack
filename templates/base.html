@@ -6,22 +6,24 @@
   <title>Spending tracker</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
    <nav id="navbar">
     <ul>
       <li id="home">
-        <a href="/">Home</a>
+        <a href="/"><i class="fa fa-home"></i>Home</a>
       </li>
       <li id="user">
-        <a href="/users/new">Add Users</a>
+        <a href="/users/new"><i class="fa fa-user-plus"></i>Users</a>
       </li>
       <li id="category">
-        <a href="/categorys">Add Category</a>
+        <a href="/categorys"><i class="fa fa-bars"></i>Category</a>
       </li>
       <li id="account">
-        <a href="/accounts/new">Add Account</a>
+        <a href="/accounts/new"><i class="fa fa-plus"></i>Account</a>
       </li>
   </nav>
   <section id="content">
