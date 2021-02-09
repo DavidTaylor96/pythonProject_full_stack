@@ -43,20 +43,19 @@ body{
 /* users */
 .user{
   /* background-color: #daddc7; */
+  white-space: nowrap;
   box-shadow: 0 0 5px  #daddc7;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  padding-left: 75px;
-  padding-right: 75px;
+  border: 1px solid gainsboro;
   border-radius: 5px;
   width: max-content;
   margin: 10px auto;
+  padding: 20px;
 }
-#button1{
-  border: none;
-  padding: 5px;
-  cursor: pointer;
 
+/* buttons */
+#button1{
+  display: flex;
+  margin: 0 auto;
 }
 
 
@@ -64,23 +63,19 @@ body{
 /* forms */
 .container{
   width: max-content;
-  /* background-color: #daddc7; */
   box-shadow: 0 0 5px  #daddc7;
   padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px auto;
+  margin:  20vh auto;
   border-radius: 5px;
 }
 
 .input{
-  width: 100%;
+  border: 1px solid gray;
+  width: max-content;
   padding: 12px 20px;
   margin: 8px 0;
   display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .option{
@@ -103,7 +98,6 @@ body{
   cursor: pointer;
 }
 /* forms */
-
 
 /*Tabs*/
 #navbar{  

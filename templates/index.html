@@ -10,31 +10,29 @@
     {% for user in users %}
       <p>{{ user.full_name }}</p>
      <div>
-      <a href="/users/{{ user.id }}/edit"><button type="submit" id=button4>Edit</button></a>
+      <a href="/users/{{ user.id }}/edit"><button type="submit" id=button1><i class="far fa-edit"></i></button></a>
       <form action="/users/{{ user.id }}/delete" method="POST">
        <button id="button1" type="submit"><i class="fa fa-close"></i></button>
      </form>
     </div>
   {% endfor %}
-  {% for account in accounts  %}
-  <p>{{ account.account_name }}</p>
-  <p>£{{ account.amount }}</p>
   <div>
-    <a href="/accounts/{{ account.id }}/edit"><button type="submit" id=button4>Edit</button></a>
-    <form action="/accounts/{{ account.id }}/delete" method="POST">
-     <button id="button1" type="submit"><i class="fa fa-close"></i></button>
-   </form>
-  </div>  
-  {% endfor %}
+    {% for account in accounts  %}
+    <p class="account">{{ account.account_name }}:  £{{ account.amount }}</p>
+      <a href="/accounts/{{ account.id }}/edit"><button type="submit" id=button1><i class="far fa-edit"></i></button></a>
+      <form action="/accounts/{{ account.id }}/delete" method="POST">
+      <button id="button1" type="submit"><i class="fa fa-close"></i></button>
+    </form> 
+    {% endfor %}
+  </div>
   </section>
 
  <!-- Add a different company using this form   -->
- <div class="container">
+ <div class="main_container">
   <form action="/" method="POST">
-      <label for="name">Company Name</label>
+      <label for="name">Company & Amount</label>
       <input type="text" name="name" placeholder="Name" required autofocus class="input">
   
-      <label for="amount">Amount Spent</label>
       <input type="number" name="amount" placeholder="Amount" class="input">
       
       <label for="category">Category</label>
