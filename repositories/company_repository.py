@@ -52,7 +52,3 @@ def update(company):
   sql = "UPDATE companys SET (name, amount, category_id, account_id) = (%s, %s, %s, %s) WHERE id = %s"
   values = [company.name, company.amount, company.category.id, company.account.id, company.id]
   run_sql(sql, values)
-
-def time_stap(today):
-  import datetime
-  today = datetime.date.today()

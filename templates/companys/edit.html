@@ -18,8 +18,8 @@
         {% endfor %}
 
       </select>
-        <label for="user">Account</label>
-        <select name="user_id" id="user" class="main-option">
+        <label for="account">Account</label>
+        <select name="account_id" id="account" class="main-option">
         {% for account in accounts %}
           <option value="{{ account.id }}">{{ account.account_name }}</option>
         {% endfor %}

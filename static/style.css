@@ -208,7 +208,7 @@ body{
 }
 
 #navbar a:hover{
-	color: gray;
+  color: gainsboro;
 	text-decoration: underline;
 	cursor: pointer;
 }
