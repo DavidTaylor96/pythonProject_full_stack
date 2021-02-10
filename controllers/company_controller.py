@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, Blueprint
 from models.category import Category
 from models.company import Company
 from models.account import Account
+from datetime import datetime
 
 import repositories.company_repository as company_repository
 import repositories.category_repository as category_repository
@@ -27,15 +28,13 @@ def company():
 def create_company():
   name = request.form['name']
   amount = request.form['amount']
-
   category = category_repository.select(request.form['category_id'])
   account = account_repository.select(request.form['account_id'])
-  print(category)
-  print(account)
   add_company = Company(name, amount, category, account)
   company_repository.save(add_company)
   account.amount -= float(amount)
   account_repository.update(account)
+  company_repository.time_stap(company)
   return redirect('/')
 
 # Edit
