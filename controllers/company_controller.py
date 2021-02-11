@@ -26,14 +26,12 @@ def company():
 # Create
 @companys_blueprint.route('/', methods=['POST'])
 def create_company():
-  import datetime
   name = request.form['name']
   amount = request.form['amount']
   category = category_repository.select(request.form['category_id'])
   account = account_repository.select(request.form['account_id'])
   today = datetime.date.today()
-  add_company = Company(name, amount, category, account, today)
-  print(add_company)
+  add_company = Company(name, amount, category, account)
   company_repository.save(add_company)
   account.amount -= float(amount)
   account_repository.update(account)
