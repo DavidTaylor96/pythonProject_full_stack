@@ -53,6 +53,8 @@ def update_company(id):
   account = account_repository.select(request.form['account_id'])
   update_company = Company(name, amount, category, account, id)
   company_repository.update(update_company)
+  account.amount += float(amount)
+  account_repository.update(account)
   return redirect("/") 
 
 # Delete
