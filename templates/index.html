@@ -62,11 +62,7 @@
     <h4>Recent Purchase</h4>
     {% for company in all_company %}
     <div class="display">
-      <p><span id="datetime"></span>
-        <script>
-          var dt = new Date();
-          document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-        </script>
+      <p>
          {{ company.name }} £{{ company.amount }} {{company.category.name }}
       </p>
       <a href="/companys/{{ company.id }}/edit"><button type="submit" id="button3"><i class="fa fa-edit"></i></button></a>
