@@ -22,10 +22,6 @@ What this app uses
 - HTML
 - CSS
  
-<div align="left">
-  <img src="img/Bottom_of_app.jpg" alt="Bottom of the app">
-</div>
+<img src="img/Bottom_of_app.jpg" alt="Bottom of the app">
 
-<div align="right">
-  <img src="img/Top_of_app.png" alt="Top of the app">
-</div>
+<img src="img/Top_of_app.png" alt="Top of the app">
