@@ -22,4 +22,4 @@ What this app uses
 - HTML
 - CSS
  
-<img scr="/images/Bottom_of_app.png">
+<img scr="images/Bottom_of_app.png" alt="Bottom of the app">
