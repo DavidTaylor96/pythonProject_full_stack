@@ -1,4 +1,4 @@
-# Project Brief READMEs
+# Project Brief
 
 Spending tracker. Create something that allows the you to add yourself as a user and the accounts that you may have. 
 Then add the spending that you have done that day.
@@ -22,4 +22,4 @@ What this app uses
 - HTML
 - CSS
  
-<img scr="images/Bottom_of_app.png" alt="Bottom of the app">
+<img scr="../images/Bottom_of_app.png" alt="Bottom of the app">
