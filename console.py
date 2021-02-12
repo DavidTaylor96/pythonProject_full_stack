@@ -10,7 +10,6 @@ import repositories.company_repository as company_repository
 import repositories.user_repository as user_repository
 import repositories.account_repository as account_repository
 
-import datetime
 
 account_repository.delete_all()
 user_repository.delete_all()
