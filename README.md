@@ -22,6 +22,4 @@ What this app uses
 - HTML
 - CSS
  
-
-![](/Users/codeclan/python_project/plan/bottom.png)
-![](/Users/codeclan/python_project/plan/top.png)
+<img scr="/images/Bottom_of_app.png">
