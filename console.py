@@ -22,7 +22,7 @@ user_repository.save(user1)
 category1 = Category("Shopping")
 category_repository.save(category1)
 
-account1 = Account('Bank of Scotland', 1500)
+account1 = Account('Bank of Scotland', 380)
 account_repository.save(account1)
 
 company1 = Company("Tesco", 50, category1, account1)
