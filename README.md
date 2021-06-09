@@ -23,7 +23,6 @@ What this app uses
 - HTML
 - Jinja2
 - CSS
-
-<img width="433" src="https://user-images.githubusercontent.com/73443858/121328046-e6446f80-c90b-11eb-80cb-7af0bf0fc023.png" alt="Python">
-
+- 
+<img width="322" alt="Python" src="https://user-images.githubusercontent.com/73443858/121328322-23106680-c90c-11eb-99e4-875e495fcbf6.png">
 <img src="img/Bottom_of_app.jpg" alt="Bottom of the app">
