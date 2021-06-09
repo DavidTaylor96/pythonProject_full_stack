@@ -24,5 +24,6 @@ What this app uses
 - Jinja2
 - CSS
 
-<img src="img/Top_of_app.png" alt="Top of the app"> 
+<img width="352" alt="Python" src="https://user-images.githubusercontent.com/73443858/121328046-e6446f80-c90b-11eb-80cb-7af0bf0fc023.png">
+
 <img src="img/Bottom_of_app.jpg" alt="Bottom of the app">
