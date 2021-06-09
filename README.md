@@ -1,18 +1,19 @@
 # Project Brief
 
-Spending tracker. Create something that allows the you to add yourself as a user and the accounts that you may have. 
-Then add the spending that you have done that day.
+Spending tracker. Create something that allows the you to add yourself as a user. 
+Add a bank account. 
+Add the amount you have spent and where you spend it.
 
 MVP
 
-- The app will allow you do creat and edit companys
-- Create and edit categorys
-- Assign the company with the appropriate category. 
-- All this will then be displayed 
+- The app will allow you do create and edit companies
+- Create/add or edit categorys
+- Assign the companies with the appropriate category
+- Display spending infomation
 
 Extensions
 
-- when you add the amount that you have spent this will get deducted from the users account. 
+- When you add the amount that you have spent this will get deducted from the users account. 
 - Allow the user to select what account the money came out from. 
 
 
@@ -20,6 +21,7 @@ What this app uses
 - flask
 - python
 - HTML
+- Jinja2
 - CSS
 
 <img src="img/Top_of_app.png" alt="Top of the app"> 
